@@ -33,9 +33,11 @@ var menuSpot = document.querySelector('#spotted-animals-list .spotted-animals-li
 var newLi = document.createElement("li");
 console.log("newli", newLi);
 
-
+/*voeg de nieuwe li toe works ? y*/
 menuSpot.appendChild(newLi);
 
+/*voeg de tekst van li toe: kakkerlak*/
+newLi.innerHTML = "kakkerlak";
 
 
 /*Q6 antwoord:<ul id="spotted-animals-list">
