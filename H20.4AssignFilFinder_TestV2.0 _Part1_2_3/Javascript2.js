@@ -9,7 +9,7 @@ method.map in stead of in the method forEach
 works ? yes excellent job*/
 /* change the title to the link by using tag <img>
 works ? yes*/
-
+/* par1 get ALL movies on the screen works? yes*/
 var movieUl = document.querySelector("#containerIdItems");
 
 const movieMap = movies.map((movies) => {
@@ -60,7 +60,7 @@ var newMovieId = document.querySelector('#newMovie');
 //console.log("newMovieId", newMovieId);/*works? y*/
 
 var movieAllLi = document.querySelectorAll('#newMovie, #avengers, #men, #princess, #batman');
-console.log("movieAllLi: ", movieAllLi); /*works? y*/
+//console.log("movieAllLi: ", movieAllLi); /*works? y*/
 /* change the nodelist into an array */
 //var movieAllLiArray = Array.from(movieAllLi);
 //console.log('movieAllLiArray', movieAllLiArray);
@@ -89,7 +89,7 @@ movieItemsId.addEventListener('change', (movieAllLi) => {
     var targetValue = movieAllLi.target.value;
     console.log('targetValue: ', targetValue);
     /*works Yes*/
-    /*switch works ? yes good job en the calling function : works ? yes*/
+    /*switch works ? yes good job en the dummy calling function : works ? yes*/
     switch (targetValue) {
         case 'newMovie':
             //console.log("SwitchNewMovie:", targetValue);
@@ -125,122 +125,43 @@ movieItemsId.addEventListener('change', (movieAllLi) => {
 
 /*............................................................................*/
 /*part 2: function filters*/
-/*possible solution : dummyVariabel works ? yes*/
-var dummyPrincess = document.querySelector("#princess");
-console.log('dummyPrincess1:  ', dummyPrincess); /*works? y*/
-var dummyPrincess1 = "Princess";
-var dummyPrincess = dummyPrincess1;
+const toFindTitle = 'princess';
+console.log('toFindTitle: ', toFindTitle); /*w? yes all movies on screen ? ye*/
 
-console.log('dymmyPrincess2', dummyPrincess);
-var moviePrincess = movies.filter((movie => movie.title.includes("Princess")));
-console.log('moviePrincess', moviePrincess);
+/* step1: set the movie item title in lowercase becasue the id= princess is in lowercase
+works ? yes*/
+const getMovieLowerCase = movies.map((movieItem) => {
+    console.log('motieItem', movieItem);
+    console.log('motieItem2', movieItem.title, movieItem.imdbID); /*w? ye*/
+    var titleImdbID = 'movieItem.title, movieItem.imdbID';
+    console.log('titleImdbID: ', titleImdbID);
+    var movieTitleLowerCase = titleImdbID.toLowerCase(); /*w? yes good job*/
+    console.log('movieTitleLowerCase: ', movieTitleLowerCase);
+    return //movieTitleLowerCase
+}) /*getxxLowerCase*/
 
+//console.log('getMovieLowerCase: ', getMovieLowerCase);
 
+/*step2: use .filter to the chosen movies for example: prinsess. Works ? yeh good job*/
+//var getMovieFilter = getMovieLowerCase.filter((getMovieLowerCaseItem) => {
+//var movieIncl = getMovieLowerCaseItem.includes(toFindTitle);
 
-var handleOnChangeEvent = function(dummyPrincess) {
-    /*get ALL movies*/
-    let alleMoviesArray = movies.map((movies) => {
-        let moviesTitle = movies.title; /*works? y*/
+//return movieIncl
+//}) /*getxxxFilter*/
 
-        //let moviesPrincess = movies.filter(movies => movies.title.includes("princess")); /*works? not yet*/
-        //console.log("moviesPrincess:", moviesPrincess);/*see futher noteblock A*/
+//console.log('getMovieFilter', getMovieFilter);
 
-    }) /* allexxArray */
+/*step3: get all the chosen movies for example: princess from the array movies 
+ and bring into the console. Use .map ?*/
 
-    /*put title to lowercase to conpair with value = princess which is lowercase works? not yet */
-    // let titleLowerCase = alleMoviesArray
-} /*handxxEvent*/
-
-/*callback function hanxxevnt()*works ?y*/
-handleOnChangeEvent();
-/*------------------------------------------------------------------*/
-/*noteblock A: test the lowercase and .include*/
-
-/*start Test B werkende voorbeeld works ? no because of lowercase p of princess, if change t
-the p in capital works ? yes 6 items */
-const getPrincessMovies = movies.filter(movie => movie.title.includes("princess"));
-console.log("getPrincessMovies: ", getPrincessMovies);
-
-
-/*einde test b werkende voorbeeld*/
-const newMovieList = movies.map((movieItem) => {
-
-
-    /*start - hieronder testA werkt tot tolowercase*/
-    // var newAllMovieList = movieItem.title;
-    // console.log('Entering newAllMovieList:  ', newAllMovieList); /*works ? yes good job*/
-    // let titleLowerCase = movieItem.title.toLowerCase(); /*works? yes*/
-    //console.log('titlePrLowerCase', titleLowerCase); /*works? y*/
-
-    /* use .includes and than .filter to get ONLY alle princess title movies*/
-    // let titleLowerCaseIncl = titleLowerCase.includes("princess"); /*w? yes answer: 6x true */
-    //console.log('titleLowerCaseIncl', titleLowerCaseIncl); /*w?yeh*/
-    /* .include only give 6x true, now use.filter to display the 6 movies. W? not yet*/
-    //let movieFilter = titleLowerCaseIncl.filter(titleLowerCaseIncl);
-    /* not yet*/
-    //console.log('movieFilter: ', movieFilter);
-    /*w? not yet*/
-    /*hieronder testA werkt tot tolowercase- einde*/
-}) /*newxxList */
-
-
-/* here under notes: 
-//var movieLoCasePrincess = titleLowerCase.filter((titleLowerCase => titleLowerCaseItem.includes("princess")));
-/* works ? not yet*/
-//console.log('movieLoCasePrincess: ', movieLoCasePrincess);
-/*works ? not yet why not break it down into stap1).include than stap2).filter*/
-/*stap 1 : .include works ? works? yes*/
-//let titleLowerCaseIncl = titleLowerCase.includes("princess");/*W? yes*/
-// console.log('titleLowerCaseIncl', titleLowerCaseIncl);/*w? yes*/
-
-/*stap 2: .filter works? not yet*/
-//let movieFilter = titleLowerCaseIncl.filter((titleLowerCaseIncl => titleLowerCaseIncl));/*w? not*/
-//console.log('movieFilter: ', movieFilter);/*w? not yet*/
-
-/*werkende voorbeeld*/
-//const getPrincessMovies = movies.filter(movie => movie.title.includes("princess"));
-
-//return newMovieList
-
-
-// var movieItemTitleLowerCase = movieItem.title.toLowerCase(); /* works ? y*/
-//return movieItemTitleLowerCase
-
-
-
-//console.log('newMovieList', newMovieList); /*works ? y*/
-/*works? y result 35 items with ONLY the title with lowercase */
-
-/*for moviesPrincess make a .filter and .include*/
-
-/*filter the word princess the letter p with CAPITAL works ? y*/
-//var moviePrincess = movies.filter((movie => movie.title.includes("Princess")));
-
-//var moviePrincess = movies.filter((movie => movie.title.toLowerCase().includes("Princess")));/works ? not yet*/
-//console.log("moviePrincess: ", moviePrincess);
-
-
-/*filter the word princessListLowCase the letter p with lowercase works ?*/
-//var moviepprincess = newMovieList.filter((newMovieList => newMovieList.includes("princess")));
-/*works ? no filter al 35 movies only title lowcase
-//console.log('moviePrincess', moviepprincess);
-
-
-/*------------------------------------------------------------*/
-
-/*function handleOnChangeEvent works ? */
-/*problem with the scope of targetValue ? once used in the function the movie img 
-disappear. So to make the function filters use a dummy like let dummyPrincess = princess*/
-//var handleOnChangeEvent = function(targetValue) {
-
-//console.log('Entering handleOnChangeEvent: ', targetValue);/* works ? yes good job*/
-/*get ALL movies with.map*/
-
-//let alleMoviesArray = movies.map((movies) => {
-//return console.log("allMovies:  ", movies) /*works ? */
+//const getChosenMovie = getMovieFilter.map((item) => {
+//??
+//return koek
 //})
-
-/*the targetValue is in lowercase so 
-//}/*function handeOnchangeEvent*/
-
-/*---------------------------------------------------------------- */
+//console.log('getChosenMovie: ', getChosenMovie);
+/*------------------------------------------------------------------*/
+/*noteblock B: test....*/
+/*start test...*/
+/*st....*/
+/*start test...*/
+/*start test...*/
