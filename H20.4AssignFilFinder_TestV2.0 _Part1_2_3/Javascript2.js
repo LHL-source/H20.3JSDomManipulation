@@ -83,6 +83,7 @@ movieItemsId.addEventListener('change', (movieAllLi) => {
     //alert(movieAllLi.target);
     /*works ? y*/
     console.log("Entering eventlistenerUl:  ", movieAllLi.target);
+    /*--------------------------------------------------------------------------------------*/
 
     //console.log("eventlistenerUlMovieAllLiTargetValue:  ", movieAllLi.target.value);
     /*works? yes where can you find it in the property in the devtool?*/
@@ -92,29 +93,46 @@ movieItemsId.addEventListener('change', (movieAllLi) => {
     /*switch works ? yes good job en the dummy calling function : works ? yes*/
     switch (targetValue) {
         case 'newMovie':
-            //console.log("SwitchNewMovie:", targetValue);
-            /* Works ?  y*/
-            //handleOnChangeEventNewMovie(targetValue)
+            var newMovie2 = movies.filter((moviesEachItem) => {
+
+                var onlyMovie = moviesEachItem.type;
+                var moviesYearPars = parseInt(moviesEachItem.year);
+                // console.log('moviesYearPars: ', moviesYearPars) /*w? yes? result: 25NAN*/
+
+                return moviesYearPars >= 2014
+
+            }); /*moxxfilter*/
+
+            console.log('newMovie2', newMovie2);
+
             break;
 
         case 'avengers':
-            //console.log("SwitchAvengers:", targetValue); /*Works ? yes*/
-            //handleOnChangeEvent(targetValue) /*works? yes*/
+            var movie1 = movies.filter(movie => {
+                return movie.title.toLowerCase().includes(targetValue);
+            })
+            console.log(' movie1', movie1);
             break;
 
         case 'men':
-            //console.log("SwitchMen:", targetValue); /*Works ? y*/
-            // handleOnChangeEvent(targetValue)
+            var movie1 = movies.filter(movie => {
+                return movie.title.toLowerCase().includes(targetValue);
+            })
+            console.log(' movie1', movie1);
             break;
 
         case 'princess':
-            //console.log("SwitchPrincess:", targetValue); /*Works ? y*/
-            //handleOnChangeEvent(targetValue);
+            var movie1 = movies.filter(movie => {
+                return movie.title.toLowerCase().includes(targetValue);
+            })
+            console.log(' movie1', movie1);
             break;
 
         case 'batman':
-            //console.log("SwitchBatman:", targetValue); /*Works ?y */
-            // handleOnChangeEvent(targetValue)
+            var movie1 = movies.filter(movie => {
+                return movie.title.toLowerCase().includes(targetValue);
+            })
+            console.log(' movie1', movie1);
             break;
 
         default:
@@ -123,45 +141,62 @@ movieItemsId.addEventListener('change', (movieAllLi) => {
 
 }) /* both are part of movieItemsId*/
 
-/*............................................................................*/
-/*part 2: function filters*/
-const toFindTitle = 'princess';
-console.log('toFindTitle: ', toFindTitle); /*w? yes all movies on screen ? ye*/
+/*-switch end--------------------------------------------------------------*/
 
-/* step1: set the movie item title in lowercase becasue the id= princess is in lowercase
-works ? yes*/
-const getMovieLowerCase = movies.map((movieItem) => {
-    console.log('motieItem', movieItem);
-    console.log('motieItem2', movieItem.title, movieItem.imdbID); /*w? ye*/
-    var titleImdbID = 'movieItem.title, movieItem.imdbID';
-    console.log('titleImdbID: ', titleImdbID);
-    var movieTitleLowerCase = titleImdbID.toLowerCase(); /*w? yes good job*/
-    console.log('movieTitleLowerCase: ', movieTitleLowerCase);
-    return //movieTitleLowerCase
-}) /*getxxLowerCase*/
 
-//console.log('getMovieLowerCase: ', getMovieLowerCase);
-
-/*step2: use .filter to the chosen movies for example: prinsess. Works ? yeh good job*/
-//var getMovieFilter = getMovieLowerCase.filter((getMovieLowerCaseItem) => {
-//var movieIncl = getMovieLowerCaseItem.includes(toFindTitle);
-
-//return movieIncl
-//}) /*getxxxFilter*/
-
-//console.log('getMovieFilter', getMovieFilter);
-
-/*step3: get all the chosen movies for example: princess from the array movies 
- and bring into the console. Use .map ?*/
-
-//const getChosenMovie = getMovieFilter.map((item) => {
-//??
-//return koek
-//})
-//console.log('getChosenMovie: ', getChosenMovie);
 /*------------------------------------------------------------------*/
-/*noteblock B: test....*/
-/*start test...*/
-/*st....*/
-/*start test...*/
-/*start test...*/
+/*noteblock test B: works ? y*/
+
+//var dummyTargetValue = 'newMovie';
+//console.log("newMovie1: ", dummyTargetValue); /*w?yes*/
+
+//var newMovie2 = movies.filter((moviesEachItem) => {
+//   var onlyMovie = moviesEachItem.type;
+
+
+// var moviesYearPars = parseInt(moviesEachItem.year);
+// console.log('moviesYearPars: ', moviesYearPars) /*w? yes? result: 25NAN*/
+
+
+//return moviesYearPars >= 2014
+
+//}); /*moxxfilter*/
+
+//console.log('newMovie2', newMovie2);
+
+/*noteblock test B: the end  */
+
+
+/*noteblock test B: test if else if else*/
+
+var dummyTargetValue = 'newMovie';
+console.log("newMovie1: ", dummyTargetValue); /*w?yes*/
+var newMovie2 = movies.filter((moviesEachItem) => {
+    var onlyMovie = moviesEachItem.type;
+    console.log('onlyMovie', onlyMovie); /*w? y*/
+    if (onlyMovie === "movie") {
+
+        var moviesYearPars = parseInt(moviesEachItem.year);
+
+        // console.log('moviesYearPars: ', moviesYearPars) /*w? yes? result: 25NAN*/
+
+        if (moviesYearPars === 2014) {
+            console.log('if1: ', moviesYearPars);
+        } else if (moviesYearPars > 2014) {
+
+            console.log('if2:', moviesYearPars);
+
+        } /*else if */
+        else {
+            console.log('else : ', moviesYearPars);
+        } /*else*/
+
+    }; /*if onlyMovie*/
+    //} /*if onlymx*/
+    return moviesYearPars
+
+}); /*moxxfilter*/
+
+console.log('newMovie2', newMovie2);
+
+/*noteblock test B: the end  */

@@ -244,4 +244,15 @@ const movies = [{
         poster: "https://m.media-amazon.com/images/M/MV5BOTdkYjA4YzAtMjNiZS00OTgyLTg5Y2ItNGIwZGQyMTUzNzFiXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
     },
 ];
-//console.log("movies:", movies);
+//var moviesYear = movies.year;
+//for (var i = 0; i < movies.length; i++) {
+//   console.log('moviesyear:', moviesYear);
+
+//}
+//console.log("movies:", moviesYear);
+
+//var movies10 = movies.map((moviesEachItem) => {
+//       return moviesEachItem.year
+//   })
+/*works ? y*/
+//console.log('movies10', movies10);
