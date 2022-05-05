@@ -1,11 +1,56 @@
 /*-------------------------------------------------------------*/
+/*start: test filtered movie by name: function getMoviesName, for loop-------------------*/
 
+function newLiMov(koek) {
+    console.log('koek-movie1:', koek); /*w?yes*/
+
+    var newLi1 = document.createElement('li');
+    // console.log("newli1: ", newLi1); /*works ? yes*/
+    var newImg2 = document.createElement('img');
+    // console.log('newImg2:', newImg2); /*works ?y*/
+    var newA = document.createElement('a');
+    // console.log('newA:', newA); /* works ? y */
+    var movieUl1 = document.querySelector("#containerIdItems");
+    // console.log('movieUl1: ', movieUl1); /*w? y */
+
+
+    var ul1AppNewLi = movieUl1.appendChild(newLi1);
+    //console.log('ul1AppNewLi: ', ul1AppNewLi); /*w?y*/
+
+    var newLi1AppNewA = newLi1.appendChild(newA);
+    //console.log('newLi1AppNewA', newLi1AppNewA); /*w?y*/
+
+
+    newA.href = "https://www.imdb.com/title/" + koek.imdbID;
+    //newA.href = "https://www.imdb.com/title/" + movie.imdbID;/*vb v iemand*/
+    console.log("newA.href", newA.href); /* w? not yet*/
+
+    var newAAppNewImg2 = newA.appendChild(newImg2);
+
+    console.log('newAAppNewImg2: ', newAAppNewImg2);
+    newAAppNewImg2.src = (koek.poster);
+    var newImg3 = newAAppNewImg2.src;
+    //console.log('newImg3: ', newImg3);
+
+
+
+    return newLi1
+}
+
+
+
+/*end: test filtered movie by name: function getMoviesName  */
+
+/*Function: getMovies w? yes start part 1-------------------------------*/
 getMovies(movies);
-/*Function: getMovies w? yes start part 1*/
+
 function getMovies() {
+
     var movieUl = document.querySelector("#containerIdItems");
+    //console.log('movieUl: ', movieUl);
 
     const movieMap = movies.map((movies) => {
+
         /* create li works ? yes*/
         var newLi = document.createElement('li');
         //console.log("newli: ", newLi); /*works ? yes*/
@@ -27,7 +72,7 @@ function getMovies() {
          want de Dom heeft een boom structuur */
         newImg1.src = (movies.poster);
         var newImg1Src = newImg1.src;
-        //console.log("newImg1.src: ", newImg1Src); /*works ? yes*/
+        // console.log("newImg1.src: ", newImg1Src); /*works ? yes*/
 
         return newLi
             //console.log('return newLi:', newLi);
@@ -81,14 +126,14 @@ var batmanId = document.querySelector('#batman');
 movieItemsId.addEventListener('change', (movieAllLi) => {
 
     var targetValue = movieAllLi.target.value;
-    console.log('targetValue: ', targetValue); /*works ?*/
+    // console.log('targetValue: ', targetValue); /*works ?*/
 
     removeMovies();
 
     /*switch works ? yes good job en the dummy calling function : works ? yes*/
     switch (targetValue) {
         case 'newMovie':
-            var newMovie2 = movies.filter((moviesEachItem) => {
+            var movie1 = movies.filter((moviesEachItem) => {
 
                 var onlyMovie = moviesEachItem.type;
                 var moviesYearPars = parseInt(moviesEachItem.year);
@@ -98,9 +143,17 @@ movieItemsId.addEventListener('change', (movieAllLi) => {
 
             }); /*moxxfilter*/
 
-            console.log('newMovie2', newMovie2);
-            getMovies(newMovie2);
+            console.log('movie1', movie1); /*W?Yes*/
 
+            movie1.forEach((item) => {
+                console.log("newmovieForEach: ", item);
+                /*W? y*/
+                newLiMov(movie1);
+                //console.log('newLiMovBinnen:', newLiMov);
+                return newLiMov
+            })
+            console.log('newLiMovBuiten: ', newLiMov);
+            //console.log('movie1ForEachBuiten:', movie1)
 
             break;
 
@@ -109,6 +162,9 @@ movieItemsId.addEventListener('change', (movieAllLi) => {
                 return movie.title.toLowerCase().includes(targetValue);
             })
             console.log(' movie1', movie1);
+            movie1.forEach((item) => {
+                newLiMov(movie1);
+            })
 
             break;
 
@@ -117,6 +173,9 @@ movieItemsId.addEventListener('change', (movieAllLi) => {
                 return movie.title.toLowerCase().includes(targetValue);
             })
             console.log(' movie1', movie1);
+            movie1.forEach((item) => {
+                newLiMov(movie1);
+            })
 
             break;
 
@@ -125,6 +184,9 @@ movieItemsId.addEventListener('change', (movieAllLi) => {
                 return movie.title.toLowerCase().includes(targetValue);
             })
             console.log(' movie1', movie1);
+            movie1.forEach((item) => {
+                newLiMov(movie1);
+            })
 
             break;
 
@@ -133,6 +195,9 @@ movieItemsId.addEventListener('change', (movieAllLi) => {
                 return movie.title.toLowerCase().includes(targetValue);
             })
             console.log(' movie1', movie1);
+            movie1.forEach((item) => {
+                newLiMov(movie1);
+            })
 
             break;
 
